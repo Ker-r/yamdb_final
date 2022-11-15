@@ -30,7 +30,7 @@ jobs:
         pip install -r requirements.txt 
 
     - name: Test with flake8
-      run: flake8 . --ignore E501,W503,W504 --exclude tests,migrations
+      run: flake8 . --ignore I004,I001,I003,E501,W503,W504 --exclude tests,migrations
 
     - name: Pytest
       run: pytest .
