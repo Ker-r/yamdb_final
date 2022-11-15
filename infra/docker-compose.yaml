@@ -1,5 +1,8 @@
 version: '3.7'
 
+volumes:
+  postgres_data:
+
 services:
   db:
     image: postgres:13.0-alpine
