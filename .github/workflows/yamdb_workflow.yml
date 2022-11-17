@@ -63,7 +63,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
-    if: github.ref == "https://github.com/Ker-r/yamdb_final/tree/master"
+    if: github.ref == 'yamdb_final/tree/master'
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
