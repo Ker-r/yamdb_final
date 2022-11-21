@@ -3,6 +3,8 @@ yamdb_final
 
 [![yamdb_final workflow](https://github.com/Ker-r/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Ker-r/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
+http://158.160.6.45/api/v1/
+http://158.160.6.45/admin/
 
 ## Описание проекта
 
