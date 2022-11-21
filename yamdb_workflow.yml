@@ -73,6 +73,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            sudo docker pull karolinaefr/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
@@ -82,7 +83,11 @@ jobs:
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            sudo docker-compose up -d 
+            sudo docker-compose up -d
+            sudo docker-compose exec -T web python manage.py makemigrations
+            sudo docker-compose exec -T web python manage.py migrate
+            sudo docker-compose exec -T web python manage.py createsuperuser
+            sudo docker-compose exec -T web python manage.py collectstatic --no-input
 
   send_message:
     runs-on: ubuntu-latest
