@@ -8,11 +8,19 @@ services:
     env_file:
       - ./.env
   web:
+<<<<<<< HEAD
     build: ../api_yamdb/
     restart: always
     volumes:
       - static_value:/app/api_yamdb/static/
       - media_value:/app/api_yamdb/media/
+=======
+    image: karolinaefr/yamdb_final:latest
+    restart: always
+    volumes:
+      - static_value:/app/static/
+      - media_value:/app/media/
+>>>>>>> 4ca8e59e7c2310d1b82a5eb8270c69b34212331e
     depends_on:
       - db
     env_file:
@@ -37,3 +45,7 @@ services:
 volumes:
   static_value:
   media_value:
+<<<<<<< HEAD
+=======
+  data_value:
+>>>>>>> 4ca8e59e7c2310d1b82a5eb8270c69b34212331e
